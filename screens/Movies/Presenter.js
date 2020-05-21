@@ -5,22 +5,22 @@ import { Dimensions, ActivityIndicator, ScrollView } from "react-native";
 import Slide from "../../components/Movies/Slide";
 import Title from "../../components/Title";
 import Vertical from "../../components/Vertical";
+import Horizontal from "../../components/Horizontal";
 
 const { width: WIDTH, height: HEIGHT } = Dimensions.get("window");
 
 const Container = styled.View``;
 
 const SlideContainer = styled.View`
-  width: ${WIDTH}px;
+  width: 100%;
   height: ${HEIGHT / 4}px;
   margin-bottom: 40px;
 `;
 
-export default ({ loading, nowPlaying, popular }) => (
+export default ({ loading, nowPlaying, popular, upcoming }) => (
   <ScrollView
     style={{ backgroundColor: "black" }}
     contentContainerStyle={{
-      flex: 1,
       justifyContent: loading ? "center" : "flex-start",
     }}
   >
@@ -47,12 +47,13 @@ export default ({ loading, nowPlaying, popular }) => (
           <Title title={"Popular Movies"} />
           <ScrollView
             horizontal
-            style={{ marginTop: 20 }}
+            style={{ marginTop: 20, marginBottom: 40 }}
             contentContainerStyle={{ paddingLeft: 30 }}
             showsVerticalScrollIndicator={false}
           >
             {popular.map((movie) => (
               <Vertical
+                id={movie.id}
                 key={movie.id}
                 poster={movie.poster_path}
                 title={movie.title}
@@ -60,6 +61,17 @@ export default ({ loading, nowPlaying, popular }) => (
               />
             ))}
           </ScrollView>
+          <Title title={"Coming Soon"} />
+          {upcoming.map((movie) => (
+            <Horizontal
+              key={movie.id}
+              id={movie.id}
+              title={movie.title}
+              votes={movie.vote_average}
+              poster={movie.poster_path}
+              overview={movie.overview}
+            />
+          ))}
         </Container>
       </>
     )}
