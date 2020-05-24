@@ -15,7 +15,7 @@ const Container = styled.View`
 
 const Data = styled.View`
   align-items: flex-start;
-  width: 60%;
+  width: 65%;
   margin-left: 25px;
 `;
 
@@ -28,6 +28,7 @@ const Title = styled.Text`
 const ReleaseDate = styled.Text`
   color: white;
   font-size: 12px;
+  opacity: 0.8;
 `;
 
 const Overview = styled.Text`
@@ -44,7 +45,7 @@ const Horizontal = ({ id, title, releaseDate, poster, overview }) => (
         {releaseDate ? (
           <ReleaseDate>{formatDate(releaseDate)}</ReleaseDate>
         ) : null}
-        <Overview>{trimText(overview, 130)}</Overview>
+        <Overview>{trimText(overview, 80)}</Overview>
       </Data>
     </Container>
   </TouchableOpacity>
