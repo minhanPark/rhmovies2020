@@ -1,11 +1,11 @@
 import React from "react";
 import styled from "styled-components/native";
 import PropTypes from "prop-types";
-import { Dimensions, Image } from "react-native";
-import { apiImage } from "../../api";
+import { Dimensions } from "react-native";
 import Poster from "../Poster";
 import { TouchableOpacity } from "react-native";
 import Votes from "../../components/Votes";
+import { trimText } from "../../utils";
 
 const { width: WIDTH, height: HEIGHT } = Dimensions.get("screen");
 
@@ -63,17 +63,15 @@ const ButtonText = styled.Text`
 
 const Slide = ({ id, title, backgroundImage, votes, overview, poster }) => (
   <Container>
-    <BG source={{ uri: apiImage(backgroundImage) }} />
+    <BG source={{ uri: backgroundImage }} />
     <Content>
-      <Poster url={apiImage(poster)} />
+      <Poster url={poster} />
       <Data>
-        <Title>{title.length > 30 ? `${title.slice(0, 27)}...` : title}</Title>
+        <Title>{trimText(title, 30)}</Title>
         <VotesContainer>
           <Votes votes={votes} />
         </VotesContainer>
-        <Overview>
-          {overview.length > 107 ? `${overview.slice(0, 107)}...` : overview}
-        </Overview>
+        <Overview>{trimText(overview, 110)}</Overview>
         <TouchableOpacity>
           <Button>
             <ButtonText>View Details</ButtonText>
