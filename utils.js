@@ -6,9 +6,5 @@ export const formatDate = (date) => {
   // 그러나 디버그 모드일때는 크롬v8엔진을 사용하고 이때는 date 작동함
   // ios에서는 작동함
   const theDate = new Date(date);
-  return theDate.toLocaleDateString("en", {
-    day: "numeric",
-    month: "long",
-    year: "numeric",
-  });
+  return theDate.toLocaleDateString("ko-KR");
 };
