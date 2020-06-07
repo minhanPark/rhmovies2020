@@ -43,6 +43,7 @@ export default ({ movies, shows, keyword, onChange, onSubmit }) => (
             votes={show.vote_average}
             title={show.name}
             poster={show.poster_path}
+            isTv={true}
           />
         ))}
       </HorizontalSlider>
