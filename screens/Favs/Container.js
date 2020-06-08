@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from "react";
-import { View, Text } from "react-native";
-import { movieApi } from "../api";
+import Presenter from "./Presenter";
+import { movieApi } from "../../api";
 
 export default () => {
   const [movies, setMovies] = useState({
@@ -17,9 +17,5 @@ export default () => {
   useEffect(() => {
     getData();
   }, []);
-  return (
-    <View>
-      <Text>{movies.results?.length}</Text>
-    </View>
-  );
+  return <Presenter {...movies} />;
 };
