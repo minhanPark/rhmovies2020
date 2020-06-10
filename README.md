@@ -4,7 +4,14 @@
 
 ## 완성 모습
 
-완성 모습의 이미지입니다.
+완성 모습의 이미지입니다.  
+![movie](https://user-images.githubusercontent.com/29043491/84287835-5db9b480-ab7b-11ea-967a-c74ef5b8c3c4.jpg)
+![tv](https://user-images.githubusercontent.com/29043491/84287840-5e524b00-ab7b-11ea-85a8-4a39e02eee4d.jpg)  
+
+![search](https://user-images.githubusercontent.com/29043491/84287824-5abec400-ab7b-11ea-925b-af07d1d6234a.jpg)
+![detail](https://user-images.githubusercontent.com/29043491/84287833-5d211e00-ab7b-11ea-8f1f-f094feedea84.jpg)  
+
+![discover](https://user-images.githubusercontent.com/29043491/84287830-5c888780-ab7b-11ea-919e-7f18c7523ff6.jpg)
 
 ## 네비게이션
 
